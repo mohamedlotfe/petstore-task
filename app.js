@@ -2,11 +2,12 @@ var createError = require('http-errors');
 var express = require('express');
 var cors = require('cors')
 
-var indexRouter = require('./components/users/usersAPI');
+var indexRouter = require('./routes/index');
 require('./db/mongodb')
 
 var app = express();
 app.use(cors())
+app.use(express.json())
 
 app.use("/api", indexRouter);
 

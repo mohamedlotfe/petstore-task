@@ -1,4 +1,4 @@
-mongoose = require("mongoose");
+var mongoose = require("mongoose");
 
 var connectionString = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@cluster0.2zepn.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 

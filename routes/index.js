@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 
-var productsRouter = require('../components/product/productsAPI');
+var petsRouter = require('../components/pet/petsAPI');
 
-router.use(productsRouter);
+router.use(petsRouter);
 
 module.exports = router;

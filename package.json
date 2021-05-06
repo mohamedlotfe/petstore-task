@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "test": "jest --silent",
+    "test": "jest --watchAll",
     "test-w": "jest --watchAll"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "express": "^4.16.4",
     "http-errors": "^1.6.3",
     "jade": "~1.11.0",
+    "jest": "^26.6.3",
     "md5": "^2.3.0",
     "mongoose": "^5.11.17",
     "morgan": "~1.9.0",
