@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "ee08afa5-415f-4f66-a328-206227abc9a0",
+		"name": "petstore",
+		"description": "Pet store is Technical Assessment using NodeJs to Implement simple Backend Endpoints\r\n\r\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "2. Add endpoint to allow pet owner to list all bids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/api/bids/6092bfbb8c19c46ca771c395",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"bids",
+						"6092bfbb8c19c46ca771c395"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. User to Bid on certain Pet certain amount of money.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"petId\": \"6092bfbb8c19c46ca771c395\",\r\n    \"userName\": \"mohamed salah\",\r\n    \"amount\": 1550\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/api/bid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"bid"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
