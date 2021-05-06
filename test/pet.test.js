@@ -26,7 +26,7 @@ describe('Allow User to bid a pet endpoint => POST /bid', () => {
             .send({ petId: pet._id, userName, amount })
             .expect(200)
             .then(async (response) => {
-                console.log(response.body.results);
+                expect(response.body.error).toBeFalsy();
                 expect(response.body.results).toBeTruthy();
                 await Pet.deleteOne({ _id: pet._id });
             });
@@ -53,16 +53,16 @@ describe('Bids endpoint => GET /bids/:petId', () => {
     });
 
     test("request with Valid petId", async () => {
-        // let pet = await Pet.create({ name: "test11", price: 100, age: 2 });
+        let pet = await Pet.create({ name: "test11", price: 100, age: 2 });
 
-        // await supertest(server).get(`/api/bids/${pet._id}`)
-        //     .expect(200)
-        //     .then(async (response) => {
-        //         expect(response.body.error).toBeFalsy();
-        //         expect(response.body.results).toEqual([]);
+        await supertest(server).get(`/api/bids/${pet._id}`)
+            .expect(200)
+            .then(async (response) => {
+                expect(response.body.error).toBeFalsy();
+                expect(response.body.results).toEqual([]);
 
-        //         await Pet.deleteOne({ _id: pet._id });
-        //     });
+                await Pet.deleteOne({ _id: pet._id });
+            });
     });
 
 

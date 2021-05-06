@@ -27,16 +27,16 @@ module.exports = {
     bidPet: (_id, username, amount) => {
         return new Promise(async (resolve, reject) => {
             try {
-                let options = { upsert: true, new: true, setDefaultsOnInsert: true };
+                let options = { multi: true, new: true, setDefaultsOnInsert: true };
 
-                let model = await Pet.update(
+                let model = await Pet.updateOne(
                     { _id, "bids.username": { '$ne': username } },
                     {
                         $push: {
                             bids: { 'username': username, 'amount': amount }
                         }
                     },
-                    { multi: true });
+                    options);
 
                 return resolve(model);
 
