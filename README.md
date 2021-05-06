@@ -25,6 +25,7 @@ npm install
 ```
 npm start
 ```
+You can use `the attached Postman Collection`
 
 ### Run test cases.
 
